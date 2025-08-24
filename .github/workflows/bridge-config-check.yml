@@ -1,0 +1,64 @@
+name: Bridge Config Check
+on: 
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: 
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install PyYAML yamllint
+          
+      - name: YAML lint check
+        run: |
+          yamllint bridge/ --config-data '{extends: default, rules: {line-length: {max: 120}}}'
+          
+      - name: YAML load test
+        run: |
+          python - <<'PY'
+          import sys, yaml, pathlib
+          p = pathlib.Path("bridge")
+          for f in ["accounts.yaml","report_registry.yaml","project_registry.yaml"]:
+              try:
+                  y = yaml.safe_load((p/f).read_text(encoding="utf-8"))
+                  assert y, f"{f} is empty"
+                  print(f"✅ {f} load OK")
+              except Exception as e:
+                  print(f"❌ {f} error: {e}")
+                  sys.exit(1)
+          print("All YAML files loaded successfully")
+          PY
+          
+      - name: Bridge migration check
+        run: |
+          if [ -f "scripts/bridge_migrate_check.py" ]; then
+            python scripts/bridge_migrate_check.py .
+          else
+            echo "⚠️ scripts/bridge_migrate_check.py not found, skipping migration check"
+          fi
+          
+      - name: Bridge config validation
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, '.')
+          try:
+              from bridge_runtime.config import validate
+              validate()
+              print("✅ Bridge configuration validation passed")
+          except Exception as e:
+              print(f"❌ Bridge configuration validation failed: {e}")
+              sys.exit(1)
+          PY

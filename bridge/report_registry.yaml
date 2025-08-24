@@ -1,0 +1,11 @@
+reports:
+- report_id: SMARTNEWS_XXXX
+  project_id: hizakoshi
+  account_id: squad_themarch01
+  active: true
+  save_prefix: gs://<bucket>/smartnews/%Y/%m/%d
+- report_id: POPIN_YYYY
+  project_id: hizakoshi
+  account_id: squad_themarch01
+  active: true
+  save_prefix: gs://<bucket>/popin/%Y/%m/%d

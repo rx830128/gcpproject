@@ -1,0 +1,8 @@
+accounts:
+  squad_themarch01:
+    base_url: https://app.squadbeyond.com
+    login_email_secret: projects/squadbeyond-automation/secrets/SQUAD_THEMARCH01_EMAIL/versions/latest
+    password_secret: projects/squadbeyond-automation/secrets/SQUAD_THEMARCH01_PASSWORD/versions/latest
+    team_name: "Annulus"
+    active: true
+    notes: "Secret参照のみ"

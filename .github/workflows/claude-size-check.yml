@@ -1,0 +1,26 @@
+name: CLAUDE size check
+on: 
+  push:
+    paths:
+      - 'CLAUDE.md'
+  pull_request:
+    paths:
+      - 'CLAUDE.md'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Check CLAUDE.md size
+        run: bash ./scripts/check-claude-size.sh
+      
+      - name: Report size
+        run: |
+          SIZE=$(wc -c < CLAUDE.md | tr -d ' ')
+          echo "CLAUDE.md size: ${SIZE} bytes"
+          if [ $SIZE -gt 35000 ]; then
+            echo "⚠️  Warning: CLAUDE.md is getting large (${SIZE}/40000 bytes)"
+          fi
