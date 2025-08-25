@@ -1,11 +1,17 @@
+version: 1
 reports:
-- report_id: SMARTNEWS_XXXX
-  project_id: hizakoshi
-  account_id: squad_themarch01
-  active: true
-  save_prefix: gs://<bucket>/smartnews/%Y/%m/%d
-- report_id: POPIN_YYYY
-  project_id: hizakoshi
-  account_id: squad_themarch01
-  active: true
-  save_prefix: gs://<bucket>/popin/%Y/%m/%d
+  - report_id: MEDPFSut_knir_Cc_OiA
+    project_id: hizakoshi
+    account_id: squad_themarch01
+    platform: smartnews
+    project_slug: hizakoshi
+    active: true
+    save_prefix: "gs://squadbeyond-automation-data/hizakoshi/smartnews/report-MEDPFSut_knir_Cc_OiA/%Y/%m/%Y-%m-%d"
+
+  - report_id: yJoEVSBZiQGcPEEZw
+    project_id: hizakoshi
+    account_id: squad_themarch01
+    platform: popin
+    project_slug: hizakoshi
+    active: true
+    save_prefix: "gs://squadbeyond-automation-data/hizakoshi/popin/report-yJoEVSBZiQGcPEEZw/%Y/%m/%Y-%m-%d"
