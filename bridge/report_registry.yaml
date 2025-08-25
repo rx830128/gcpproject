@@ -1,17 +1,20 @@
+# bridge/report_registry.yaml
 version: 1
 reports:
   - report_id: MEDPFSut_knir_Cc_OiA
     project_id: hizakoshi
-    account_id: squad_themarch01
-    platform: smartnews
     project_slug: hizakoshi
+    platform: SmartNews
+    account_id: squad_themarch01
     active: true
-    save_prefix: "gs://squadbeyond-automation-data/hizakoshi/smartnews/report-MEDPFSut_knir_Cc_OiA/%Y/%m/%Y-%m-%d"
+    # 例）gs://squadbeyond-automation-data/hizakoshi/smartnews/report-MEDPFSut_knir_Cc_OiA/2025/08/2025-08-25/*.csv
+    save_prefix: gs://squadbeyond-automation-data/hizakoshi/smartnews/report-MEDPFSut_knir_Cc_OiA/%Y/%m/%Y-%m-%d
 
   - report_id: yJoEVSBZiQGcPEEZw
     project_id: hizakoshi
-    account_id: squad_themarch01
-    platform: popin
     project_slug: hizakoshi
+    platform: Popin
+    account_id: squad_themarch01
     active: true
-    save_prefix: "gs://squadbeyond-automation-data/hizakoshi/popin/report-yJoEVSBZiQGcPEEZw/%Y/%m/%Y-%m-%d"
+    # 例）gs://squadbeyond-automation-data/hizakoshi/popin/report-yJoEVSBZiQGcPEEZw/2025/08/2025-08-25/*.csv
+    save_prefix: gs://squadbeyond-automation-data/hizakoshi/popin/report-yJoEVSBZiQGcPEEZw/%Y/%m/%Y-%m-%d

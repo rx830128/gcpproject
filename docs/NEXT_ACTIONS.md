@@ -1,15 +1,11 @@
-# Next Actions（このパッケージ反映後）
+# Next Actions
 
-1) **requirements の Secret Manager 対応パッチを適用**
-   ```bash
-   patch -p1 < patches/requirements_secretmanager.patch
-   ```
-   - `google-cloud` メタを削除、`google-cloud-secret-manager>=2.20.0` を追加
+## 優先
+- [ ] ログタグ（[login2]/[team2]/[nav2]/[diag]）出力の定着（ログレベル/メッセージの再確認）
+- [ ] `/enhanced_download` の**当日日付**での安定保存を再確認（JST, Scheduler 実行で検証）
+- [ ] GCS 保存リテンション/ライフサイクル（30/60/90日）設計
 
-2) **Cloud Run 環境変数の維持（Git Bash は MSYS_NO_PATHCONV=1）**
-   ```bash
-   MSYS_NO_PATHCONV=1 gcloud run services update "$SERVICE" --region "$REGION" \
-     --set-env-vars=^:^BRIDGE_DIR=/app/bridge:SB_HEADLESS_MODE=new:SB_VIEWPORT=1360,1024:TEAM_NAME=Annulus
-   ```
-
-3) **明示タグで再デプロイ（必要時）→ /bridge_status → /enhanced_download → ログ確認**
+## 改善
+- [ ] Slack/Chatwork 通知の追加（失敗/0行/403 検知）
+- [ ] headless 検出回避オプションのチューニング
+- [ ] /health にバージョンと短縮ビルドIDを表示
