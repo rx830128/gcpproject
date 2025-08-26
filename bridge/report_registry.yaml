@@ -1,20 +1,28 @@
-# bridge/report_registry.yaml
-version: 1
 reports:
+  # カンシャ（旧 ankenb） / Meta
+  - report_id: dc_pUEfNFNcKgejcKg
+    project_id: ankenb
+    account_id: squad_rx830
+    active: true
+    save_prefix: gs://squadbeyond-data-tanaka/ankenb/Meta/%Y/%m/%d
+
+  # ロコヘルプEX（旧 locohelp_fb） / Meta
+  - report_id: fSvwmeCegoLNguTdBw
+    project_id: locohelp_fb
+    account_id: squad_rx830
+    active: true
+    save_prefix: gs://squadbeyond-data-tanaka/locohelp_fb/Meta/%Y/%m/%d
+
+  # ひざこしコラーゲンw（hizakoshi） / SmartNews
   - report_id: MEDPFSut_knir_Cc_OiA
     project_id: hizakoshi
-    project_slug: hizakoshi
-    platform: SmartNews
     account_id: squad_themarch01
     active: true
-    # 例）gs://squadbeyond-automation-data/hizakoshi/smartnews/report-MEDPFSut_knir_Cc_OiA/2025/08/2025-08-25/*.csv
-    save_prefix: gs://squadbeyond-automation-data/hizakoshi/smartnews/report-MEDPFSut_knir_Cc_OiA/%Y/%m/%Y-%m-%d
+    save_prefix: gs://squadbeyond-data-tanaka/hizakoshi/SmartNews/%Y/%m/%d
 
+  # ひざこしコラーゲンw（hizakoshi） / Popin
   - report_id: yJoEVSBZiQGcPEEZw
     project_id: hizakoshi
-    project_slug: hizakoshi
-    platform: Popin
     account_id: squad_themarch01
     active: true
-    # 例）gs://squadbeyond-automation-data/hizakoshi/popin/report-yJoEVSBZiQGcPEEZw/2025/08/2025-08-25/*.csv
-    save_prefix: gs://squadbeyond-automation-data/hizakoshi/popin/report-yJoEVSBZiQGcPEEZw/%Y/%m/%Y-%m-%d
+    save_prefix: gs://squadbeyond-data-tanaka/hizakoshi/Popin/%Y/%m/%d

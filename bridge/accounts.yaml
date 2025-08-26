@@ -1,8 +1,16 @@
 accounts:
-  squad_themarch01:
+  squad_themarch01:                  # 既存アカウント（themarch.ad.01@gmail.com）
     base_url: https://app.squadbeyond.com
     login_email_secret: projects/squadbeyond-automation/secrets/SQUAD_THEMARCH01_EMAIL/versions/latest
     password_secret: projects/squadbeyond-automation/secrets/SQUAD_THEMARCH01_PASSWORD/versions/latest
+    team_name: "Annulus"
+    active: true
+    notes: "Secret参照のみ"
+
+  squad_rx830:                       # 新規アカウント（rx830128@gmail.com 用）
+    base_url: https://app.squadbeyond.com
+    login_email_secret: projects/squadbeyond-automation/secrets/SQUAD_RX830128_EMAIL/versions/latest
+    password_secret: projects/squadbeyond-automation/secrets/SQUAD_RX830128_PASSWORD/versions/latest
     team_name: "Annulus"
     active: true
     notes: "Secret参照のみ"
