@@ -3,7 +3,7 @@ accounts:
     base_url: https://app.squadbeyond.com
     login_email_secret: projects/squadbeyond-automation/secrets/SQUAD_THEMARCH01_EMAIL/versions/latest
     password_secret: projects/squadbeyond-automation/secrets/SQUAD_THEMARCH01_PASSWORD/versions/latest
-    team_name: "Annulus"
+    team_name: "ミックスケース"
     active: true
     notes: "Secret参照のみ"
 
@@ -11,6 +11,6 @@ accounts:
     base_url: https://app.squadbeyond.com
     login_email_secret: projects/squadbeyond-automation/secrets/SQUAD_RX830128_EMAIL/versions/latest
     password_secret: projects/squadbeyond-automation/secrets/SQUAD_RX830128_PASSWORD/versions/latest
-    team_name: "Annulus"
+    team_name: "ミックスケース"
     active: true
     notes: "Secret参照のみ"
