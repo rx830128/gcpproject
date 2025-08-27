@@ -1,12 +1,7 @@
 projects:
-  ankenb:                # カンシャ
-    room_id: 111111111
-    notes: カンシャ
-
-  locohelp_fb:           # ロコヘルプEX
-    room_id: 222222222
-    notes: ロコヘルプEX
-
-  hizakoshi:             # ひざこしコラーゲンw
-    room_id: 123456789
-    notes: ひざこしコラーゲンw
+  - project_id: ankenb
+    label: "カンシャ（旧 ankenb）"
+  - project_id: locohelp_fb
+    label: "ロコヘルプEX（旧 locohelp_fb）"
+  - project_id: hizakoshi
+    label: "ひざこしコラーゲンw（hizakoshi）"
